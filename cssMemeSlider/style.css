@@ -9,7 +9,7 @@ body {
 
 .slider {
   width: 1024px;
-  height: 700px;
+  height: 655px;
   margin: 5% auto;
   background-color: #aaa;
   overflow: hidden;
@@ -28,6 +28,7 @@ body {
 
 .slide {
   width: 25%;
+  transition: all 0.6s ease;
 }
 
 .slide__img {
@@ -43,22 +44,43 @@ body {
   margin-top: 10px;
   display: block;
   margin-left: 65px;
-  width: 20%;
 }
 
 .slides__nav {
   display: flex;
+  gap: 5px;
   justify-content: center;
+  width: 100px;
+  height: 20px;
+  margin-left: 880px;
+  margin-top: -37px;
 }
 
 .slides__label {
   cursor: pointer;
-  width: 15px;
-  height: 15px;
-  background-color: #ddd;
-  opacity: 0.7;
-  border-radius: 10px;
-  transition: all 0.5s ease-in-out;
+  width: 17px;
+  height: 17px;
+  background-color: #1e90ff;
+  border: 1px solid #1e90ff;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+.slides__label:hover {
+  background-color: aliceblue;
+  transform: scale(1.1);
+}
+
+input[name="slides"]:checked + .slides__label {
+  background-color: #0000cd;
+}
+
+.slides__label:checked {
+  background-color: red;
+}
+
+.slides__label:active {
+  background-color: skyblue;
 }
 
 input[name="slides"] {
@@ -80,4 +102,18 @@ input[name="slides"] {
 
 #slide4:checked ~ .slide1 {
   margin-left: -75%;
+}
+
+#slide1:checked ~ .slides__nav label:nth-child(1),
+#slide2:checked ~ .slides__nav label:nth-child(2),
+#slide3:checked ~ .slides__nav label:nth-child(3),
+#slide4:checked ~ .slides__nav label:nth-child(4) {
+  background-color: #333;
+}
+
+#slide1:checked ~ .slides .slides__nav label:nth-child(1),
+#slide2:checked ~ .slides .slides__nav label:nth-child(2),
+#slide3:checked ~ .slides .slides__nav label:nth-child(3),
+#slide4:checked ~ .slides .slides__nav label:nth-child(4) {
+  background-color: #0000cd; /* Подсветка активного лейбла */
 }
