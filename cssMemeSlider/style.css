@@ -56,11 +56,12 @@ body {
   justify-content: center;
   width: 100px;
   height: 20px;
-  margin-left: 880px;
+  margin-left: 865px;
   margin-top: -37px;
 }
 
 .slides__label {
+  display: block;
   cursor: pointer;
   width: 17px;
   height: 17px;
@@ -107,18 +108,6 @@ input[name="slides"] {
 #slide4:checked ~ .slide1 {
   margin-left: -75%;
 }
-
-input[name="slides"]:checked + .slides__nav label {
-  background-color: #0000cd; 
-}
-
-#slide1:checked ~ .slides__nav label[for="slide1"],
-#slide2:checked ~ .slides__nav label[for="slide2"],
-#slide3:checked ~ .slides__nav label[for="slide3"],
-#slide4:checked ~ .slides__nav label[for="slide4"] {
-  background-color: #ff9900; 
-}
-
 
 @media screen and (max-width: 1024px) {
   .slider {
