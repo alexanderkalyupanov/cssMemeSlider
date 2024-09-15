@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.slider {
+  width: 1024px;
+  height: 655px;
+  margin: 5% auto;
+  background-color: #aaa;
+  overflow: hidden;
+}
+
+.slider__cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.slides {
+  display: flex;
+  width: 400%;
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  transition: all 0.6s ease;
+}
+
+.slide__img {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 87.892%;
+  height: 87.892%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slide__text {
+  margin-top: 15px;
+  display: block;
+  margin-left: 65px;
+  transition: all 0.6s ease;
+}
+
+.slides__nav {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 100px;
+  height: 20px;
+  margin-left: 865px;
+  margin-top: -37px;
+}
+
+.slides__label {
+  display: block;
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+  background-color: #1e90ff;
+  border: 1px solid #1e90ff;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+.slides__label span {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.slides__label:hover {
+  background-color: aliceblue;
+  transform: scale(1.1);
+}
+
+.slides__label:active {
+  background-color: skyblue;
+}
+
+input[name="slides"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+#slide1:checked ~ .slide1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .slide1 {
+  margin-left: -25%;
+}
+
+#slide3:checked ~ .slide1 {
+  margin-left: -50%;
+}
+
+#slide4:checked ~ .slide1 {
+  margin-left: -75%;
+}
+
+@media screen and (max-width: 1024px) {
+  .slider {
+    width: 80.277%;
+    height: 550px;
+  }
+  .slides__nav {
+    margin: -50px auto;
+    padding-left: 45px;
+  }
+  .slide__text {
+    margin-top: 40px;
+    margin-left: 45px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .slider {
+    width: 75.277%;
+    max-height: 500px;
+  }
+  .slides__nav {
+    margin: -50px auto;
+  }
+  .slide__text {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    width: 75.277%;
+    height: 425px;
+  }
+  .slides__nav {
+    padding-left: 30px;
+  }
+  .slide__text {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .slider {
+    height: 375px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .slider {
+    height: 325px;
+  }
+}
